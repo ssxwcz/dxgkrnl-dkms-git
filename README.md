@@ -1,5 +1,5 @@
 ## dxgkrnl-dkms
-这是一个为 Arch Linux 打包的 DKMS 模块，用于支持 dxgkrnl 内核模块。dxgkrnl 是集成到 WSL2 Linux 内核中的 DirectX 驱动程序。
+这是一个为 Arch Linux 打包的 dxgkrnl 内核模块。dxgkrnl 是集成到 WSL2 Linux 内核中的 DirectX 驱动程序。
 
 
 
