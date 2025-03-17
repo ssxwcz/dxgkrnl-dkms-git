@@ -1,5 +1,5 @@
 # Maintainer: ssxw <ssxwcz@gmail.com>
-pkgname=dxgkrnl-dkms-git
+pkgname=dxgkrnl-dkms-git-patch
 pkgver=1.0
 pkgrel=1
 pkgdesc="Microsoft dxgkrnl kernel module for GPU support in the latest self-compiled WSL2 Linux kernel"
@@ -53,11 +53,12 @@ EOF
     sed -i '0,/^#include.*/s//&\n#include <linux\/vmalloc.h>/' $srcdir/dxgkrnl-$commit_version/hmgr.c
     sed -i '0,/^#include.*/s//&\n#include <linux\/vmalloc.h>/' $srcdir/dxgkrnl-$commit_version/ioctl.c
 
+    msg "Current kernel version: $(uname -r)"
     export commit_version
 }
 
 package() {
-
+    msg "Current kernel version: $(uname -r)"
     if [[ ! -d "$srcdir/dxgkrnl-$commit_version" ]]; then
         error "Source directory not found: $srcdir/dxgkrnl-$commit_version"
         exit 1
